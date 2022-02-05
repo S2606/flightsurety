@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>FlightSurety</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">FlightSurety</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    <main class="container">
+        <div id="payout" class="top-20" style="display: none">
+			Successfully amount remitted <span id="remittedAmount"></span></div>
+		</div>
+        
+        <div class="top-20">
+            <div id="flightOnTime" style="display:none">
+                <p>It seems flight is not eligible for delayed payout. Happy Journey!</p>
+            </div>
+            <div id="flightReport" style="display:none">
+                <label>Flight Name: </label>&nbsp;<b><span id='name'></span></b>
+                <br/>
+                <br/>
+                <label>Status Code: </label>&nbsp;<b><span id='status'></span></b>
+                <br/>
+                <br/>
+                <label>Payout(Expected): </label>&nbsp;<b><span id='amount'></span><btn style="display: none" type="button" class="btn btn-primary" id="getFunds">Get Funds</btn></b>
+                <br/>
+                <br/>
+                <label>Arrival Time: </label>&nbsp;<b><span id='timestamp'></span></b>
+                <br/>
+                <br/>
+            </div>
+
+        </div>
+
+        <div id="displayDetails" class="top-20">
+        </div>
+        <div class="row top-20">
+            <label class="form">Flight</label> 
+            <select id="flightList"></select> 
+            <btn class="btn btn-primary" id="submitOracle">Submit to Oracles</btn>
+            <div>
+                <btn style="display:none" id="oracleResult" type="button" class="btn btn-primary">Check Flight Status</button>
+                <span id='showIndex' style="display: none"></span>
+            </div>
+        </div>
+    </main>
+    <div>
+        <div class="bottom-20" id="flightForm" style="display:none">
+            <div class="formContent">
+                <div class="formHeader">
+                    <h3 class="formTitle">Insurance</h3>
+                </div>
+                <div class="formBody">
+                    <label class="form">Departure Date:</label><p id="departure"></p><br/>
+                    <label class="form">Flight Name:</label><p id="flgname"></p><br/>
+                    <br/>
+                    <label class="from">Enter Amount(0.01-1 Ether only) </label>
+                    &nbsp;<input type="number" id="insurePremium" min="0" max="1" step="0.01">
+                    <br/>
+                    <label>Payout: </label>&nbsp;<b><span id='payoutPremium'>0</span> ether</b>
+                    <br/>
+                    <label>Payout On Delay: </label>&nbsp;<b><span id='delayPremium'>0</span> ether</b>
+                    <br/>
+                    <btn type="button" class="btn btn-primary" id="purchase">Purchase Insurance</btn>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
